@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            text-decoration: none;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: url("https://ts1.cn.mm.bing.net/th/id/R-C.88234a438402313454792c9fa983e8b1?rik=cYw52uozLlK9zw&riu=http%3a%2f%2fimage.qianye88.com%2fpic%2fae39b028fc49887e1ec284ef0dffb268&ehk=LpAW7jyRJKW2PMFb%2fseS70O3bm12t5zDMU%2fAFttqfZA%3d&risl=&pid=ImgRaw&r=0") no-repeat center center;
+            width: 100%;
+            height: 100vh;
+            background-size: 100vw;
+        }
+
+        .header {
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 1.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            margin-right: 30px;
+            justify-content: space-between;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 5rem;
+        }
+
+        .nav-link {
+            /* 自动适配rem */
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+
+        .nav-link:hover,
+        .nav-logo:hover {
+            color: rgb(172, 17, 186);
+        }
+
+        .nav-logo {
+            margin-left: 30px;
+            font-size: 2.1rem;
+            font-weight: 400;
+            border-radius: 4px;
+            box-shadow: 4px -4px 11px #c8c2c2a2, 4px 4px 9px rgba(147, 149, 151, 0.971);
+        }
+
+        .nav-logo span {
+            display: block;
+            padding: 10px;
+            /* margin: 20px; */
+            top: 20px;
+            line-height: 25px;
+            font-size: 1.7rem;
+            font-weight: 600;
+            /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+        }
+
+        .wrapper {
+            /* 最大宽度 */
+            max-width: 720px;
+            width: 100%;
+            height: auto;
+            /* 定位 */
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            /* 用transform来居中 */
+            transform: translate(-50%, -50%);
+            padding: 20px 20px;
+            /* 阴影 */
+            box-shadow: -4px -4px 11px #c8c2c2a2, 4px 4px 9px rgba(147, 149, 151, 0.671);
+        }
+
+        .wrapper h2,
+        p,
+        li,
+        a {
+            color: #fff;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            list-style: none;
+        }
+
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .wrapper .form .form_container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .wrapper .form .form_container .form_left,
+        .wrapper .form .form_container .form_right {
+            width: 48%;
+        }
+
+        .wrapper .form .input_field input[type="text"],
+        .wrapper .form textarea {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 1.5px solid rgba(255, 255, 255, 0.438);
+            border-radius: 3px;
+            background: rgba(105, 105, 105, 0.25);
+        }
+
+        .wrapper .form textarea {
+            height: 90%;
+        }
+
+        .wrapper .form .btn {
+            width: 200px;
+            background: rgba(217, 205, 205, 0.164);
+            margin: 0 auto;
+            padding: 13px;
+            font-size: 18px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .wrapper .form .btn a {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="#" class="nav-logo">
+                <span>007计划</span></a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">1</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">1</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">0</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">1</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <h1>黄翡翠HTML训练营</h1>
+        <section>
+            <h2>介绍</h2>
+            <p>HyperTextMarkupLanguage: 超文本标记语言</p>
+        </section>
+
+        <section>
+            <h2>初识HTML</h2>
+            <p>
+                HTML
+                文档应该有<strong>.html</strong>文件扩展名。通常一个站点的主页被命名为<strong>“index.html”</strong>。
+                “index”表示这是浏览器将加载的默认文件。命名 HTML
+                文件时使用<em>小写字母</em>。HTML 资源的名称通常用在 URL 中。 URL
+                通常区分大小写。
+            </p>
+            <ul>
+                <li>HTML 学习如何搭建页面结构和内容 (盖房子 毛坯房)</li>
+                <li>CSS 学习如何美化页面 (装修)</li>
+                <li>JavaScript 学习如何给页面添加动态效果</li>
+                <li>jQuery JS语言框架,简化原生JS开发</li>
+                <li>
+                    <a href="https://www.bootcss.com/">
+                        Bootstrap
+                        前端框架对html/css/JavaScript/jQuery进行封装,目的是提高前端页面的开发效率
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <h2>联系方式</h2>
+        <div class="form">
+            <div class="form_container">
+                <div class="form_left">
+                    <div class="input_field">
+                        <input type="text" placeholder="少爷的名字*" />
+                    </div>
+                    <div class="input_field">
+                        <input type="text" placeholder="少爷的邮件*" />
+                    </div>
+                    <div class="input_field">
+                        <input type="text" placeholder="留个电话*" />
+                    </div>
+                </div>
+                <div class="form_right">
+                    <textarea placeholder="其他信息*"></textarea>
+                </div>
+            </div>
+
+            <div class="btn">
+                <a href="#">发送</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
