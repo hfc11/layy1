@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url(https://labfile.oss.aliyuncs.com/courses/8605/bg-451838.jpeg);
+            background-size: 100% 100%;
+            font-family: "kanit", Verdana, Arial, sans-serif;
+        }
+
+        #container {
+            width: 430px;
+            padding: 40px 20px;
+            background: white;
+        }
+
+        h1 {
+            color: #175fa1;
+            font-size: 30px;
+            width: 100%;
+            margin-top: -15px;
+            margin-bottom: 30px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        #text {
+            display: block;
+            width: 100%;
+            background-color: transparent;
+            color: #021652;
+            border: 2px solid #175fa1;
+            border-radius: 2px;
+            resize: none;
+            margin-bottom: 35px;
+            height: 200px;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        #filename {
+            width: calc(100% - 200px);
+            border: 2px solid #3ba9f4;
+            border-radius: 2px;
+            background-color: tansparent;
+            color: #052a53;
+            padding: 0 10px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            margin-right: 20px;
+        }
+
+        #download {
+            width: 174px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 20px;
+            border: none;
+            border-radius: 2px;
+            background-color: #3ba9f4;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <h1>将文本保存到文件中</h1>
+        <textarea placeholder="在此输入文字..." id="text"></textarea>
+        <input id="filename" placeholder="起一个文件名...">
+        <button id="download">下载文件</button>
+    </div>
+    <script>
+        function downloadFile(filename, content) {
+
+            const element = document.createElement('a');
+
+            const blob = new Blob([content], { type: 'plain/text' });
+
+            const fileUrl = URL.createObjectURL(blob);
+
+            element.setAttribute('href', fileUrl);
+            element.setAttribute('download', filename);
+            element.style.display = 'none';
+
+            document.body.appendChild(element);
+            element.click();
+
+            document.body.removeChild(element);
+        }
+
+        window.onload = () => {
+
+            document.getElementById('download').
+
+                addEventListener('click', e => {
+
+                    const filename = document.getElementById('filename').value;
+
+                    const content = document.getElementById('text').value;
+
+                    if (filename && content) {
+                        downloadFile(filename, content);
+                    }
+                });
+        };
+    </script>
+</body>
+
+</html>
